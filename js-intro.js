@@ -90,6 +90,7 @@ const removeVowelsFromStringEnterprise = str => {
     if(typeof str !== "string"){
         throw 'the variable is not a string'
     }
+    
     try{
         return str.replace(vowelRegex,'')
     } catch (err) {
@@ -107,12 +108,24 @@ var toonimals = [ {name: "Itchy", animal: "mouse"}, {name: "Stimpy", animal: "ca
 
 // 5a. Write a function that takes in the toonimals array as an argument and returns an array with only the toon objects that are cats. Expected output: [ { name: "Stimpy", animal: "cat" }, { name: "Scratchy", animal: "cat" }, { name: "Felix", animal: "cat" } ]
 
+const filterToonsByAnimal = (toonArray, animal) => toonArray.filter(toon => toon.animal === animal)
 
+filterToonsByAnimal(toonimals, 'mouse')
+filterToonsByAnimal(toonimals, 'cat')
 
 
 //5b. Write a function that returns only the names of all the non-cats. Expected output: "Itchy" "Daffy" "Ren"
 
+const namesOfAllNonCats = toonArray => toonArray.filter(toon => toon.animal !== 'cat').map(toon => toon.name)
 
-
+namesOfAllNonCats(toonimals)
 
 //5c. STRETCH: Create a function that will print a sentence for every toon stating their name and their animal type. Use string interpolation. Expected output: "Itchy is a mouse" "Stimpy is a cat" "Daffy is a duck" "Scratchy is a cat" "Ren is a dog" "Felix is a cat"
+
+const toonSentenceGenerator = ({name, animal}) => {
+    return `${name} is a ${animal}`
+}
+
+const logToons = toonarray => toonarray.forEach(toon => console.log(toonSentenceGenerator(toon)))
+
+logToons(toonimals)
