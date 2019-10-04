@@ -7,7 +7,10 @@ var mantra = "Be the dev"
 
 // 1a. Write the code that determines if there is a 'B' in mantra.
 
+const containsLetterInString = (letter, str) => str.includes(letter)
 
+console.log(containsLetterInString('B', mantra))
+containsLetterInString('B', mantra)
 
 // 1b. Write the code that determines if there is an 'x' in mantra.
 
