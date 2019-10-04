@@ -69,7 +69,7 @@ do{
 
 // 3d. SUPER STRETCH: Write the code that logs each letter of the message using forEach().
 
-
+// Map is needed only if you need to return an array therefor using map is not a correct way to log each value in the string. 
 
 
 // ---------------------------- Consider the following variable:
@@ -78,15 +78,27 @@ var testString = "thisisateststring"
 
 // 4a. Write a function that takes the variable as an argument and returns the string without vowels. Expected output: "thsstststrng"
 
+const vowelRegex = /[aeiou]/gi
 
+const removeVowelsFromString = str => str.replace(vowelRegex,'')
 
-
+removeVowelsFromString(testString)
 
 // 4b. STRETCH: Update your function to return an error message if the variable is not a string. Copy and paste your function to add these changes.
 
+const removeVowelsFromStringEnterprise = str => {
+    if(typeof str !== "string"){
+        throw 'the variable is not a string'
+    }
+    try{
+        return str.replace(vowelRegex,'')
+    } catch (err) {
+        console.error(err)
+    }
+}
 
-
-
+//removeVowelsFromStringEnterprise(true)
+removeVowelsFromStringEnterprise(testString)
 
 
 // ------------------------------- Consider the following variable:
