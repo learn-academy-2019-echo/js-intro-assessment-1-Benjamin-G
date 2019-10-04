@@ -44,7 +44,7 @@ const multiStringArrayGenerator = (...args) => [...args]
 
 const twoStringLowerCaseGenerator = (str1, str2) => [str1, str2].map(word => word.toLowerCase()).join(' ')
 
-console.log(twoStringLowerCaseGenerator(myCat, myDog))
+const multiStringLowerCaseGenerator = (...args) => [...args].map(word => word.toLowerCase()).join(' ')
 
 // ------------------------------ Consider the following variable:
 
@@ -52,15 +52,20 @@ var myMessage = "Learning is fun!"
 
 // 3a. Write the code that logs each letter of the message using a for loop.
 
-
+for(let i = 0; i < myMessage.length; i++){
+    console.log(myMessage[i])
+}
 
 // 3b. Write the code that logs each letter of the message using map.
 
-
+myMessage.split('').forEach(letter => console.log(letter))  //Map is not needed here since we are just logging
 
 // 3c. STRETCH: Write the code that logs each letter of the message using a while loop.
-
-
+let i = 0
+do{
+    console.log(myMessage[i])
+    i++
+}while(i < myMessage.length)
 
 // 3d. SUPER STRETCH: Write the code that logs each letter of the message using forEach().
 
