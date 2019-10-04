@@ -9,20 +9,19 @@ var mantra = "Be the dev"
 
 const containsLetterInString = (letter, str) => str.includes(letter)
 
-console.log(containsLetterInString('B', mantra))
 containsLetterInString('B', mantra)
 
 // 1b. Write the code that determines if there is an 'x' in mantra.
 
-
+containsLetterInString('x', mantra)
 
 // 1c. Write the code that determines if there is a 'v' in mantra.
 
-
+containsLetterInString('v', mantra)
 
 // 1d. STRETCH: Write a function that can take two arguments - a string and a letter and returns a sentence telling the user if the letter exists within the string.
 
-
+// ^^^ I did that first ^^^
 
 // ------------------------------ Consider the following variables:
 
@@ -31,18 +30,21 @@ var myCat = "Garfield"
 
 // 2a. Create a function that returns the longer of the two variables. Expected output: "Garfield"
 
-
+const longerString = (str1, str2) => str1.length > str2.length ? str1 : str2
 
 
 // 2b. Create a function that takes in two arguments and returns an array containing the two variables. Expected output: ["Snoopy", "Garfield"]
 
+const twoStringArrayGenerator = (str1, str2) => [str1, str2]
 
+const multiStringArrayGenerator = (...args) => [...args]
 
 
 // 2c. STRETCH: Write a function that returns the two variables in all lowercase letters. Expected output: "snoopy garfield"
 
+const twoStringLowerCaseGenerator = (str1, str2) => [str1, str2].map(word => word.toLowerCase()).join(' ')
 
-
+console.log(twoStringLowerCaseGenerator(myCat, myDog))
 
 // ------------------------------ Consider the following variable:
 
